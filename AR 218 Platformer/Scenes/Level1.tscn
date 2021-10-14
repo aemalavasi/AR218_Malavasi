@@ -33,11 +33,6 @@ font_data = ExtResource( 7 )
 [node name="Level1" type="Node2D"]
 position = Vector2( 130.298, -27.7182 )
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 705.703, 191.783 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Painting" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -54,39 +49,64 @@ motion_mirroring = Vector2( 1024, 1024 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Curtain"]
 material = SubResource( 1 )
+position = Vector2( -1.49829, 0 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="Dog Platforms" type="Node2D" parent="."]
 
 [node name="Platform1_Rocky" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 20.8995, 514.894 )
+position = Vector2( -486.98, 66.0643 )
 
 [node name="Platform2_Sal2" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 633.293, 167.743 )
+position = Vector2( 54.9987, 159.619 )
 
 [node name="Platform1_Rocky3" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 731.065, 515.529 )
+position = Vector2( -7.95837, 56.4003 )
 
 [node name="Platform2_Sal" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 108.559, 143.117 )
+position = Vector2( -178.855, 162.953 )
+
+[node name="Platform2_Sal3" parent="Dog Platforms" instance=ExtResource( 3 )]
+position = Vector2( 320.362, 153.053 )
 
 [node name="Platform1_Rocky2" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 240.099, 517.237 )
+position = Vector2( -244.822, 60.7217 )
+
+[node name="Platform1_Rocky5" parent="Dog Platforms" instance=ExtResource( 1 )]
+position = Vector2( 366.808, 58.834 )
+
+[node name="Platform1_Rocky4" parent="Dog Platforms" instance=ExtResource( 1 )]
+position = Vector2( 271.934, 50.599 )
+
+[node name="Platform1_Rocky6" parent="Dog Platforms" instance=ExtResource( 1 )]
+position = Vector2( 472.979, 56.2623 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Collectable" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 169.686, 130.644 )
+position = Vector2( 126.826, 160.011 )
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 480.127, 65.7792 )
+position = Vector2( 461.588, 161.134 )
 
 [node name="Collectable3" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 1007.31, 89.8669 )
+position = Vector2( 367.746, 129.618 )
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 760.746, 152.618 )
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 915.307, 162.618 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
+modulate = Color( 0.603922, 0.882353, 0.301961, 1 )
+position = Vector2( 678.661, 141.477 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -0.984511, 187.391 )
+position = Vector2( 5.94292, 224.828 )
 
 [node name="Fallzone" type="Area2D" parent="."]
 position = Vector2( -16.6935, 748.544 )
@@ -129,4 +149,6 @@ __meta__ = {
 [connection signal="coin_collected" from="Collectables/Collectable" to="HUD/ScoreLabel" method="_on_Collectable_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable2" to="HUD/ScoreLabel" method="_on_Collectable2_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable3" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable4" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable5" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Area2D_body_entered"]

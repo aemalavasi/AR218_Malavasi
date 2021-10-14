@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/banri sprite.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Collectable.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "Bounce"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
@@ -30,8 +30,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.29, 0.3 ), Vector2( -0.29, 0.3 ), Vector2( 0.29, 0.3 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "FakeRotate"
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
@@ -46,19 +45,20 @@ tracks/0/keys = {
 "values": [ Vector2( 0.29007, 0.299656 ), Vector2( -0.29, 0.3 ), Vector2( 0.29007, 0.299656 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 40.4124
-
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 16.369
+[sub_resource type="CircleShape2D" id=3]
+radius = 17.0368
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 10.0051
-height = 2.84268
+radius = 6.71553
+height = 4.83396
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 7.53017
-height = 17.692
+radius = 3.56467
+height = 2.84268
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 3.15399
+height = 7.114
 
 [node name="Collectable" type="Area2D"]
 collision_layer = 8
@@ -66,37 +66,37 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FakeRotate"
-anims/Bounce = SubResource( 6 )
-anims/FakeRotate = SubResource( 1 )
+anims/Bounce = SubResource( 1 )
+anims/FakeRotate = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 90.5638, 94.0736 )
-scale = Vector2( 0.29, 0.3 )
+position = Vector2( 36.7464, 41.0971 )
+scale = Vector2( 0.0984791, 0.111472 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 88, 57 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 90.1561, 120.208 )
+position = Vector2( 35.9722, 27.7805 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 65.7609, 115.258 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 35.9347, 49.635 )
 shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 27.5001, 48.617 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
-position = Vector2( 115.612, 110.309 )
-shape = SubResource( 4 )
+position = Vector2( 46.0278, 47.8724 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2( 99.7021, 158.746 )
-shape = SubResource( 5 )
+position = Vector2( 40.2087, 64.5656 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2( 80.2566, 159.806 )
-shape = SubResource( 5 )
+position = Vector2( 33.3766, 64.9949 )
+shape = SubResource( 6 )
 
 [connection signal="body_entered" from="." to="." method="_on_Collectable_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
