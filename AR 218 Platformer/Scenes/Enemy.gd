@@ -15,7 +15,7 @@ func _ready():
 		$AnimatedSprite.flip_h()
 		$ground_check.position.x = $ground_check.position.x *-1
 func _process(delta):
-	if not $Fade_timer.is_stopped():
+	if not $Fade_Timer.is_stopped():
 		modulate.a = modulate.a * $Fade_Timer.time_left
 	
 	if is_on_wall():
