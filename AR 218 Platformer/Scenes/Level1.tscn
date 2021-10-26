@@ -3,12 +3,12 @@
 [ext_resource path="res://Scenes/Platform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Platform2_Sal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Collectable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BackgroundSprites/CurtainBackground.png" type="Texture" id=5]
 [ext_resource path="res://BackgroundSprites/PaintingBackground.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Collectable Cookie.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
@@ -74,30 +74,24 @@ position = Vector2( 320.362, 153.053 )
 position = Vector2( -244.822, 60.7217 )
 
 [node name="Platform1_Rocky5" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 366.808, 58.834 )
+position = Vector2( 376.84, 51.8119 )
 
 [node name="Platform1_Rocky4" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 271.934, 50.599 )
+position = Vector2( 268.934, 62.599 )
 
 [node name="Platform1_Rocky6" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 472.979, 56.2623 )
+position = Vector2( 478.998, 46.2307 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
-[node name="Collectable" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 126.826, 160.011 )
+[node name="Collectable Cookie" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 40.5866, 235.025 )
 
-[node name="Collectable2" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 461.588, 161.134 )
+[node name="Collectable Cookie2" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 283.74, 221.927 )
 
-[node name="Collectable3" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 367.746, 129.618 )
-
-[node name="Collectable4" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 760.746, 152.618 )
-
-[node name="Collectable5" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 915.307, 162.618 )
+[node name="Collectable Cookie3" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 870.252, 199.157 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -146,9 +140,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="coin_collected" from="Collectables/Collectable" to="HUD/ScoreLabel" method="_on_Collectable_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable2" to="HUD/ScoreLabel" method="_on_Collectable2_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable3" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable4" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable5" to="HUD/ScoreLabel" method="_on_Collectable3_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Area2D_body_entered"]
