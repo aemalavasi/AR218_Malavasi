@@ -4,6 +4,7 @@ signal coin_collected
 
 func _on_Collectable_Cookie_body_entered(body):
 	Global.score = Global.score + 1
+	print(Global.score)
 	
 	emit_signal("coin_collected")
 	
@@ -20,9 +21,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	pass # Replace with function body.
 
 
-
-
-func _on_Collectable_coin_collected():
-	pass # Replace with function body.
 
 

@@ -16,7 +16,7 @@ config/icon="res://Sprites/icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Scenes/Global.gd"
 
 [display]
 

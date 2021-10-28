@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Platform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Platform2_Sal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Collectable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BackgroundSprites/CurtainBackground.png" type="Texture" id=5]
 [ext_resource path="res://BackgroundSprites/PaintingBackground.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=7]
@@ -84,6 +85,9 @@ position = Vector2( 478.998, 46.2307 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
+[node name="Collectable" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 100.119, 164.977 )
+
 [node name="Collectable Cookie" parent="Collectables" instance=ExtResource( 10 )]
 position = Vector2( 40.5866, 235.025 )
 
@@ -96,8 +100,7 @@ position = Vector2( 870.252, 199.157 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
-modulate = Color( 0.603922, 0.882353, 0.301961, 1 )
-position = Vector2( 678.661, 141.477 )
+position = Vector2( 682.366, 159.64 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5.94292, 224.828 )
@@ -116,9 +119,9 @@ anchor_left = 0.918
 anchor_right = 0.957
 anchor_bottom = 0.03
 margin_left = -57.04
-margin_top = 1.0
+margin_top = 2.25992
 margin_right = 54.04
-margin_bottom = 11.4
+margin_bottom = 12.6599
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -140,4 +143,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="coin_collected" from="Collectables/Collectable" to="HUD/ScoreLabel" method="_on_Collectable_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie2_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie3_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Area2D_body_entered"]

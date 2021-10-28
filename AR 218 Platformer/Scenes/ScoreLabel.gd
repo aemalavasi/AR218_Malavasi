@@ -15,3 +15,20 @@ func _on_Collectable3_coin_collected():
 	pass # Replace with function body.
 
 	text = String(Global.score) + my_string
+
+
+func _on_Collectable_Cookie_coin_collected():
+	pass # Replace with function body.
+	
+	text = String(Global.score) + my_string
+
+func _on_Collectable_Cookie2_coin_collected():
+	pass # Replace with function body.
+
+	text =  String(Global.score) + my_string
+	
+func _on_Collectable_Cookie3_coin_collected():
+	pass # Replace with function body.
+
+	text = String(Global.score) + my_string
+	
