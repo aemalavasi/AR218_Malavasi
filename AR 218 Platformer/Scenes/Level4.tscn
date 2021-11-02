@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://BackgroundSprites/keyboard background.png" type="Texture" id=1]
 [ext_resource path="res://BackgroundSprites/flowers background.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=12]
 [ext_resource path="res://Audios/Level 1 song.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Level4.gd" type="Script" id=14]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -102,7 +103,7 @@ position = Vector2( 595.197, 388.529 )
 position = Vector2( 498.369, 388.631 )
 
 [node name="Collectable Banri" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 378.965, 391.234 )
+position = Vector2( 375.968, 391.234 )
 
 [node name="Collectable Banri2" parent="Collectables" instance=ExtResource( 10 )]
 position = Vector2( 1776.66, 954.463 )
@@ -155,6 +156,9 @@ __meta__ = {
 stream = ExtResource( 13 )
 autoplay = true
 
+[node name="Goal" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4009.12, 687.868 )
+
 [connection signal="coin_collected" from="Collectables/CollectableChitoge2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableChitoge" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableRamuda" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
@@ -162,3 +166,4 @@ autoplay = true
 [connection signal="coin_collected" from="Collectables/Collectable Banri2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableRamuda2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Fallzone_body_entered"]
+[connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]

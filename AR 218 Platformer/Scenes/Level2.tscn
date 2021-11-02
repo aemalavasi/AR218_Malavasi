@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/PlatformCraftPaint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/CollectableCanvas.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/CollectablePaint.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Level2.gd" type="Script" id=12]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
@@ -192,6 +193,12 @@ position = Vector2( 797.17, 33.6359 )
 stream = ExtResource( 8 )
 autoplay = true
 
+[node name="Goal" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4064.05, 68.8544 )
+
+[node name="Goal2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4028.32, 809.499 )
+
 [connection signal="coin_collected" from="Collectables/CollectablePaint6" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectablePaint5" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectablePaint4" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
@@ -207,3 +214,5 @@ autoplay = true
 [connection signal="coin_collected" from="Collectables/CollectableCanvas7" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectablePaint7" to="HUD/ScoreLabel" method="_on_CollectablePaint7_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Fallzone_body_entered"]
+[connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="Goal2" to="Player" method="_on_Goal2_body_entered"]

@@ -43,3 +43,7 @@ func _on_Goal_body_entered(body):
 	else:
 		get_tree().change_scene("res://Scenes/Level" + str(Global.current_level) + ".tscn")
 	pass # Replace with function body.
+
+
+func _on_Goal2_body_entered(body):
+	pass # Replace with function body.
