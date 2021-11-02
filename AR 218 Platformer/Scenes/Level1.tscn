@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Platform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://BackgroundSprites/PaintingBackground.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=8]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Collectable Cookie.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/PlatformPalette.tscn" type="PackedScene" id=11]
 
@@ -33,6 +34,9 @@ font_data = ExtResource( 7 )
 
 [node name="Level1" type="Node2D"]
 position = Vector2( 130.298, -27.7182 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 2.25992 ]
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -126,9 +130,9 @@ shape = SubResource( 2 )
 anchor_left = 0.918
 anchor_right = 0.957
 anchor_bottom = 0.03
-margin_left = -57.04
+margin_left = -59.6699
 margin_top = 2.25992
-margin_right = 54.04
+margin_right = 60.4102
 margin_bottom = 12.6599
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
@@ -137,15 +141,15 @@ __meta__ = {
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
 anchor_left = 0.878
-anchor_top = 0.032
-anchor_right = 0.995
+anchor_top = 0.014
+anchor_right = 1.0
 anchor_bottom = 0.032
-margin_left = 8.33423
-margin_top = -15.2096
-margin_right = 8.57422
-margin_bottom = 19.7904
+margin_left = 2.03491
+margin_top = -0.989679
+margin_right = -3.125
+margin_bottom = 21.0503
 custom_fonts/font = SubResource( 4 )
-text = "0 ITEMS COLLECTED"
+text = "0 COOKIES COLLECTED"
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -156,5 +160,14 @@ position = Vector2( 507.483, 175.871 )
 stream = ExtResource( 4 )
 autoplay = true
 
+[node name="Goal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1877.73, 327.852 )
+
+[connection signal="coin_collected" from="Collectables/Collectable Cookie6" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Cookie" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
-[connection signal="body_entered" from="Fallzone" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie4" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Cookie5" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="body_entered" from="Fallzone" to="Player" method="_on_Fallzone_body_entered"]
+[connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]

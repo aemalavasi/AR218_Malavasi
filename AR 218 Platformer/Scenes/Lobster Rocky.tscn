@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/rocky lobster 1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/rocky lobster 2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Lobster Rocky.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -15,6 +16,7 @@ animations = [ {
 radius = 56.2043
 
 [node name="Lobster Rocky" type="KinematicBody2D"]
+script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -4.78305, -4.5536 )

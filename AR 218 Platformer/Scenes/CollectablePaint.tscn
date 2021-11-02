@@ -28,6 +28,7 @@ tracks/0/keys = {
 extents = Vector2( 12.5345, 30.5238 )
 
 [node name="CollectablePaint" type="Area2D"]
+collision_layer = 8
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
