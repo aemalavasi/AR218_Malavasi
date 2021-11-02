@@ -7,7 +7,7 @@ func _on_CollectableRamuda_body_entered(body):
 	print(Global.score)
 	
 	emit_signal("coin_collected")
-	
+	$CoinSound.play()
 	$AnimationPlayer.play("Bounce")
 	
 	set_collision_layer_bit(3, false)

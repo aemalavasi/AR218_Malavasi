@@ -65,10 +65,10 @@ position = Vector2( 110.243, 231.825 )
 position = Vector2( 494, 442 )
 
 [node name="PlatformCandle2" parent="Platforms" instance=ExtResource( 5 )]
-position = Vector2( 874.826, 552.103 )
+position = Vector2( 935.144, 555.785 )
 
 [node name="PlatformCandle3" parent="Platforms" instance=ExtResource( 4 )]
-position = Vector2( 1163.04, 516.116 )
+position = Vector2( 1214.39, 528.589 )
 
 [node name="PlatformCandle4" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( 1406.67, 703.37 )
@@ -120,10 +120,14 @@ shape = SubResource( 2 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="HUD"]
-margin_left = 1109.0
-margin_top = 8.0
-margin_right = 1276.0
-margin_bottom = 48.0
+anchor_left = 0.866
+anchor_top = 0.011
+anchor_right = 0.997
+anchor_bottom = 0.067
+margin_left = 0.519897
+margin_top = 0.0799994
+margin_right = -0.160034
+margin_bottom = -0.240002
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
