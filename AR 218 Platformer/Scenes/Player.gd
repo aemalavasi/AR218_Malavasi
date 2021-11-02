@@ -5,7 +5,7 @@ const GRAVITY = 35
 var velocity = Vector2(0,0)
 
 export var speed = 100
-export var jump = -900
+export var jump = -1000
 export var energy := 10
 
 func _physics_process(delta):
@@ -33,3 +33,8 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://Scenes/Level1.tscn")
 	pass # Replace with function body.
+
+
+func _on_Fallzone_body_entered(body):
+	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Level1.tscn")

@@ -1,41 +1,13 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/cookie collectable.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Collectable Cookie.gd" type="Script" id=2]
+[ext_resource path="res://Collectable Cookie.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Bounce"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 180.0, 360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -0.651489 ), Vector2( 0, -100 ), Vector2( 0, -80 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "FakeRotate"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -44,17 +16,31 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.118297, 0.120851 ), Vector2( -0.118, 0.121 ), Vector2( 0.118297, 0.120851 ) ]
+"values": [ -360.0, 0.0, 360.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 15.1349
-height = 0.0
+[sub_resource type="Animation" id=2]
+resource_name = "FakeRotate"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 21.9208
 
 [node name="Collectable Cookie" type="Area2D"]
-position = Vector2( 0, -80 )
-rotation = 6.28319
-collision_layer = 8
+rotation = -6.28319
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -63,12 +49,12 @@ anims/Bounce = SubResource( 1 )
 anims/FakeRotate = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.430138, 2.85745 )
-scale = Vector2( 0.118297, 0.120851 )
+position = Vector2( -1.23706, 2.66174 )
+scale = Vector2( 0.180214, 0.17501 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.769699, 2.80842 )
+position = Vector2( 0, 1.6837 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Collectable_Cookie_body_entered"]

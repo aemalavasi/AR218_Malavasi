@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Fonts/RampartOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Manrope-VariableFont_wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Sprites/kunimi square sprite.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/rocky square sprite 2.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=5]
+[ext_resource path="res://Audios/Menu song.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 19
@@ -70,9 +71,9 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 787.182
-margin_top = 182.683
+margin_top = 183.943
 margin_right = 1313.18
-margin_bottom = 708.683
+margin_bottom = 709.943
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -129,5 +130,9 @@ text = "Artist Statement"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

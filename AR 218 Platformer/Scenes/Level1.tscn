@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Platform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Platform2_Sal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Collectable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Collectable Banri.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BackgroundSprites/CurtainBackground.png" type="Texture" id=5]
 [ext_resource path="res://BackgroundSprites/PaintingBackground.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Audios/Level 1 song.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/Collectable Cookie.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/PlatformPalette.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
@@ -57,50 +58,45 @@ centered = false
 [node name="Dog Platforms" type="Node2D" parent="."]
 
 [node name="Platform1_Rocky" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( -486.98, 66.0643 )
-
-[node name="Platform2_Sal2" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 54.9987, 159.619 )
-
-[node name="Platform1_Rocky3" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( -7.95837, 56.4003 )
+position = Vector2( -484.007, 66.5956 )
 
 [node name="Platform2_Sal" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( -178.855, 162.953 )
+position = Vector2( 11.892, 124.867 )
 
-[node name="Platform2_Sal3" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 320.362, 153.053 )
+[node name="Platform2_Sal2" parent="Dog Platforms" instance=ExtResource( 3 )]
+position = Vector2( 206.922, 110.596 )
 
 [node name="Platform1_Rocky2" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( -244.822, 60.7217 )
+position = Vector2( -329.41, 71.3524 )
 
-[node name="Platform1_Rocky5" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 376.84, 51.8119 )
+[node name="Platform1_Rocky3" parent="Dog Platforms" instance=ExtResource( 1 )]
+position = Vector2( 172.346, 90.7616 )
+
+[node name="Platform2_Sal3" parent="Dog Platforms" instance=ExtResource( 3 )]
+position = Vector2( 610.919, 329.153 )
+
+[node name="Platform2_Sal4" parent="Dog Platforms" instance=ExtResource( 3 )]
+position = Vector2( 808.213, 321.434 )
 
 [node name="Platform1_Rocky4" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 268.934, 62.599 )
+position = Vector2( 813.47, 305.449 )
 
-[node name="Platform1_Rocky6" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 478.998, 46.2307 )
+[node name="Platform1_Rocky5" parent="Dog Platforms" instance=ExtResource( 1 )]
+position = Vector2( 285.732, 166.677 )
+
+[node name="PlatformPalette" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1615.49, 547.541 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
-[node name="Collectable" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 100.119, 164.977 )
+[node name="Collectable Banri" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 89.135, 226.201 )
 
 [node name="Collectable Cookie" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 40.5866, 235.025 )
-
-[node name="Collectable Cookie2" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 283.74, 221.927 )
-
-[node name="Collectable Cookie3" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 870.252, 199.157 )
+position = Vector2( 239.002, 181.019 )
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 682.366, 159.64 )
+position = Vector2( 49.6129, 4.20448 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5.94292, 224.828 )
@@ -128,23 +124,25 @@ __meta__ = {
 }
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
-anchor_left = 0.939
-anchor_top = 0.035
-anchor_right = 0.939
-anchor_bottom = 0.035
-margin_left = -78.0951
-margin_top = -19.4063
-margin_right = 71.9049
-margin_bottom = 15.5937
+anchor_left = 0.878
+anchor_top = 0.032
+anchor_right = 0.995
+anchor_bottom = 0.032
+margin_left = 8.33423
+margin_top = -15.2096
+margin_right = 8.57422
+margin_bottom = 19.7904
 custom_fonts/font = SubResource( 4 )
-text = "0 FIGURES COLLECTED"
+text = "0 ITEMS COLLECTED"
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="coin_collected" from="Collectables/Collectable" to="HUD/ScoreLabel" method="_on_Collectable_coin_collected"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[connection signal="coin_collected" from="Collectables/Collectable Banri" to="HUD/ScoreLabel" method="_on_Collectable_Banri_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Cookie" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable Cookie2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie2_coin_collected"]
-[connection signal="coin_collected" from="Collectables/Collectable Cookie3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie3_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Area2D_body_entered"]
