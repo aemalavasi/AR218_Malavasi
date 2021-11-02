@@ -38,3 +38,4 @@ func _on_Area2D_body_entered(body):
 func _on_Fallzone_body_entered(body):
 	pass # Replace with function body.
 	get_tree().change_scene("res://Scenes/Level1.tscn")
+
