@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/CollectableCanvas.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/CollectablePaint.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Level2.gd" type="Script" id=12]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3
@@ -59,28 +59,28 @@ centered = false
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="PlatformCraftpaint5" parent="Node2D" instance=ExtResource( 1 )]
-position = Vector2( 2959.96, 739.989 )
+position = Vector2( 3045.27, 697.335 )
 
 [node name="PlatformPaintbrush8" parent="Node2D" instance=ExtResource( 5 )]
-position = Vector2( 2744.69, 696.262 )
+position = Vector2( 2762.65, 828.713 )
 
 [node name="PlatformCraftpaint3" parent="Node2D" instance=ExtResource( 1 )]
 position = Vector2( 1483.15, 88.2986 )
 
 [node name="PlatformPalette2" parent="Node2D" instance=ExtResource( 6 )]
-position = Vector2( 3761.71, 1035.21 )
+position = Vector2( 3872.83, 1041.56 )
 
 [node name="PlatformPaintbrush6" parent="Node2D" instance=ExtResource( 5 )]
-position = Vector2( 2762.08, 165.09 )
+position = Vector2( 2806.53, 282.558 )
 
 [node name="PlatformPaintbrush7" parent="Node2D" instance=ExtResource( 5 )]
-position = Vector2( 3244.71, 212.697 )
+position = Vector2( 3282.81, 215.872 )
 
 [node name="PlatformCraftpaint4" parent="Node2D" instance=ExtResource( 1 )]
-position = Vector2( 1949.33, 92.0692 )
+position = Vector2( 2012.19, 96.5591 )
 
 [node name="PlatformPalette" parent="Node2D" instance=ExtResource( 6 )]
-position = Vector2( 3804.16, 289.107 )
+position = Vector2( 3874.01, 292.282 )
 
 [node name="PlatformPaintbrush5" parent="Node2D" instance=ExtResource( 5 )]
 position = Vector2( 1245.92, 136.896 )
@@ -106,13 +106,13 @@ position = Vector2( 741.716, 599.496 )
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="CollectablePaint6" parent="Collectables" instance=ExtResource( 11 )]
-position = Vector2( 3237.72, 692.889 )
+position = Vector2( 3264.66, 731.053 )
 
 [node name="CollectablePaint5" parent="Collectables" instance=ExtResource( 11 )]
 position = Vector2( 629.321, 578.467 )
 
 [node name="CollectablePaint4" parent="Collectables" instance=ExtResource( 11 )]
-position = Vector2( 2063.83, 127.136 )
+position = Vector2( 2037.1, 87.9365 )
 
 [node name="CollectablePaint3" parent="Collectables" instance=ExtResource( 11 )]
 position = Vector2( 1103.26, 494.447 )
@@ -139,7 +139,7 @@ position = Vector2( 955.636, 584.824 )
 position = Vector2( 2286.32, 82.6381 )
 
 [node name="CollectableCanvas6" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 3074.56, 180.109 )
+position = Vector2( 3306.32, 75.3406 )
 
 [node name="CollectableCanvas7" parent="Collectables" instance=ExtResource( 10 )]
 position = Vector2( 2292.68, 483.115 )
@@ -194,10 +194,7 @@ stream = ExtResource( 8 )
 autoplay = true
 
 [node name="Goal" parent="." instance=ExtResource( 13 )]
-position = Vector2( 4064.05, 68.8544 )
-
-[node name="Goal2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 4028.32, 809.499 )
+position = Vector2( 4191.05, 91.0779 )
 
 [connection signal="coin_collected" from="Collectables/CollectablePaint6" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectablePaint5" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
@@ -215,4 +212,3 @@ position = Vector2( 4028.32, 809.499 )
 [connection signal="coin_collected" from="Collectables/CollectablePaint7" to="HUD/ScoreLabel" method="_on_CollectablePaint7_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Fallzone_body_entered"]
 [connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]
-[connection signal="body_entered" from="Goal2" to="Player" method="_on_Goal2_body_entered"]

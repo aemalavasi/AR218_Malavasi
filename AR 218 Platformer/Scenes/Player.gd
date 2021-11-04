@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity := Vector2(0,0)
-export var speed := 70
+export var speed := 90
 export var jump := -700
 const GRAVITY := 20
 
@@ -19,7 +19,7 @@ func _physics_process(delta):
 	#show with "pressed"
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump
-		
+		$JumpSound.play()
 	if not is_on_floor():
 		$AnimatedSprite.play("air")
 
@@ -31,7 +31,7 @@ func _physics_process(delta):
 
 
 func _on_Fallzone_body_entered(body):
-	get_tree().change_scene("res://Scenes/Level" + str(Global.current_level) + ".tscn")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	pass # Replace with function body.
 	
 
@@ -45,5 +45,6 @@ func _on_Goal_body_entered(body):
 	pass # Replace with function body.
 
 
-func _on_Goal2_body_entered(body):
+func _on_EndGoal_body_entered(body):
+	get_tree().change_scene("res://Scenes/WinScreen.tscn")
 	pass # Replace with function body.

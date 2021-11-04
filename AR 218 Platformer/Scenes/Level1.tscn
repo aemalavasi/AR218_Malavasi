@@ -8,7 +8,7 @@
 [ext_resource path="res://BackgroundSprites/PaintingBackground.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=8]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Collectable Cookie.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/PlatformPalette.tscn" type="PackedScene" id=11]
 
@@ -64,49 +64,52 @@ centered = false
 position = Vector2( -484.007, 66.5956 )
 
 [node name="Platform2_Sal" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 11.892, 124.867 )
+position = Vector2( 49.6129, 98.7651 )
 
 [node name="Platform2_Sal2" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 206.922, 110.596 )
+position = Vector2( 206.922, 198.636 )
 
 [node name="Platform1_Rocky2" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( -329.41, 71.3524 )
+position = Vector2( -309.536, 98.7651 )
 
 [node name="Platform1_Rocky3" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 172.346, 90.7616 )
+position = Vector2( 227.821, 61.9781 )
 
 [node name="Platform2_Sal3" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 610.919, 329.153 )
+position = Vector2( 763.157, 217.025 )
 
 [node name="Platform2_Sal4" parent="Dog Platforms" instance=ExtResource( 3 )]
-position = Vector2( 808.213, 321.434 )
+position = Vector2( 985.072, 303.31 )
 
 [node name="Platform1_Rocky4" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 813.47, 305.449 )
+position = Vector2( 850.523, 321.724 )
 
 [node name="Platform1_Rocky5" parent="Dog Platforms" instance=ExtResource( 1 )]
-position = Vector2( 285.732, 166.677 )
+position = Vector2( 393.075, 173.35 )
 
 [node name="PlatformPalette" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1615.49, 547.541 )
+position = Vector2( 1636.84, 557.664 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
+[node name="Collectable Cookie7" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 893.702, 260.009 )
+
 [node name="Collectable Cookie6" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 1041.57, 397.299 )
+position = Vector2( 1286.02, 476.771 )
 rotation = -8.93276e-06
 
 [node name="Collectable Cookie3" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 516.37, 166.677 )
+position = Vector2( 1218.43, 391.35 )
 
 [node name="Collectable Cookie2" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 101.708, 230.963 )
+position = Vector2( 125.958, 284.06 )
 
 [node name="Collectable Cookie" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 241.672, 189.695 )
+position = Vector2( 282.97, 173.35 )
 
 [node name="Collectable Cookie4" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 721.226, 321.724 )
+position = Vector2( 714.451, 224.828 )
 
 [node name="Collectable Cookie5" parent="Collectables" instance=ExtResource( 10 )]
 position = Vector2( 1414.92, 547.541 )
@@ -127,27 +130,28 @@ shape = SubResource( 2 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="HUD"]
-anchor_left = 0.918
-anchor_right = 0.957
-anchor_bottom = 0.03
-margin_left = -59.6699
-margin_top = 2.25992
-margin_right = 60.4102
-margin_bottom = 12.6599
+anchor_left = 0.859
+anchor_top = 0.03
+anchor_right = 0.992
+anchor_bottom = 0.054
+margin_left = -0.150024
+margin_top = -7.34008
+margin_right = -0.389893
+margin_bottom = 7.3799
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
-anchor_left = 0.878
-anchor_top = 0.014
-anchor_right = 1.0
-anchor_bottom = 0.032
-margin_left = 2.03491
-margin_top = -0.989679
-margin_right = -3.125
-margin_bottom = 21.0503
+anchor_left = 0.859
+anchor_top = 0.02
+anchor_right = 0.989
+anchor_bottom = 0.064
+margin_left = 15.8501
+margin_top = 6.85013
+margin_right = 0.450073
+margin_bottom = 10.1701
 custom_fonts/font = SubResource( 4 )
 text = "0 COOKIES COLLECTED"
 script = ExtResource( 8 )
@@ -161,8 +165,9 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Goal" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1877.73, 327.852 )
+position = Vector2( 1962.68, 351.972 )
 
+[connection signal="coin_collected" from="Collectables/Collectable Cookie7" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Cookie6" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Cookie3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Cookie2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]

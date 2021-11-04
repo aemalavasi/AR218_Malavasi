@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/ScoreLabel.gd" type="Script" id=12]
 [ext_resource path="res://Audios/Level 1 song.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Level4.gd" type="Script" id=14]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/EndGoal.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -56,6 +56,7 @@ motion_mirroring = Vector2( 1024, 1024 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Flowers"]
 modulate = Color( 0.545098, 0.329412, 0.262745, 1 )
 material = SubResource( 1 )
+position = Vector2( -1.33484, 0 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -83,33 +84,54 @@ position = Vector2( 1774, 997.873 )
 position = Vector2( 2212.84, 1120.71 )
 
 [node name="Platform Shelf3" parent="Platforms" instance=ExtResource( 6 )]
-position = Vector2( 2660.48, 914.343 )
+position = Vector2( 2640.48, 978.007 )
 
-[node name="PlatformCandle1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3165.13, 965.349 )
+[node name="PlatformCandle7" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 3256, 1088 )
 
-[node name="PlatformPalette" parent="PlatformCandle1" instance=ExtResource( 9 )]
-position = Vector2( 588.628, -60.5444 )
+[node name="PlatformCandle6" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 3041.13, 841.349 )
+
+[node name="PlatformPalette" parent="Platforms" instance=ExtResource( 9 )]
+position = Vector2( 3665.76, 856.805 )
 
 [node name="Collectables" type="Node2D" parent="."]
 
+[node name="CollectableRamuda4" parent="Collectables" instance=ExtResource( 8 )]
+position = Vector2( 3365.2, 545.384 )
+
+[node name="CollectableChitoge4" parent="Collectables" instance=ExtResource( 7 )]
+position = Vector2( 1565, 554.17 )
+
+[node name="Collectable Banri4" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 1153.53, 260.167 )
+
+[node name="CollectableRamuda3" parent="Collectables" instance=ExtResource( 8 )]
+position = Vector2( 2646.86, 924.628 )
+
+[node name="CollectableChitoge3" parent="Collectables" instance=ExtResource( 7 )]
+position = Vector2( 2526.18, 921.248 )
+
 [node name="CollectableChitoge2" parent="Collectables" instance=ExtResource( 7 )]
-position = Vector2( 1902.43, 949.266 )
+position = Vector2( 1899.26, 944.504 )
 
 [node name="CollectableChitoge" parent="Collectables" instance=ExtResource( 7 )]
-position = Vector2( 595.197, 388.529 )
+position = Vector2( 606.523, 382.866 )
 
 [node name="CollectableRamuda" parent="Collectables" instance=ExtResource( 8 )]
-position = Vector2( 498.369, 388.631 )
+position = Vector2( 490.818, 384.855 )
 
 [node name="Collectable Banri" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 375.968, 391.234 )
+position = Vector2( 368.417, 387.458 )
 
 [node name="Collectable Banri2" parent="Collectables" instance=ExtResource( 10 )]
-position = Vector2( 1776.66, 954.463 )
+position = Vector2( 1773.49, 947.32 )
+
+[node name="Collectable Banri3" parent="Collectables" instance=ExtResource( 10 )]
+position = Vector2( 2760.48, 925.991 )
 
 [node name="CollectableRamuda2" parent="Collectables" instance=ExtResource( 8 )]
-position = Vector2( 1650.23, 949.973 )
+position = Vector2( 1651.82, 948.386 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 115.711, 174.496 )
@@ -153,17 +175,24 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 228.07, 7.1272 )
 stream = ExtResource( 13 )
 autoplay = true
 
-[node name="Goal" parent="." instance=ExtResource( 15 )]
-position = Vector2( 4009.12, 687.868 )
+[node name="EndGoal" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4000.29, 678.056 )
 
+[connection signal="coin_collected" from="Collectables/CollectableRamuda4" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/CollectableChitoge4" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Banri4" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/CollectableRamuda3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/CollectableChitoge3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableChitoge2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableChitoge" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableRamuda" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Banri" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/Collectable Banri2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
+[connection signal="coin_collected" from="Collectables/Collectable Banri3" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="coin_collected" from="Collectables/CollectableRamuda2" to="HUD/ScoreLabel" method="_on_Collectable_Cookie_coin_collected"]
 [connection signal="body_entered" from="Fallzone" to="Player" method="_on_Fallzone_body_entered"]
-[connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="EndGoal" to="Player" method="_on_EndGoal_body_entered"]

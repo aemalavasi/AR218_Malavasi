@@ -24,9 +24,9 @@ animations = [ {
 "name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "walk",
+"name": "air",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
@@ -34,9 +34,9 @@ animations = [ {
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "air",
+"name": "walk",
 "speed": 5.0
 } ]
 

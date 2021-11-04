@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Artist Statement Song.ogg-f296c9f32f2e8c5b3f58a7b1e5faf8c8.oggstr"
+
+[deps]
+
+source_file="res://Audios/Artist Statement Song.ogg"
+dest_files=[ "res://.import/Artist Statement Song.ogg-f296c9f32f2e8c5b3f58a7b1e5faf8c8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

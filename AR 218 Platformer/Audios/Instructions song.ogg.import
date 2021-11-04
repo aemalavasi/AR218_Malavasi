@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Instructions song.ogg-828315b28e2c1e8c9cd9f5c46dc83c99.oggstr"
+
+[deps]
+
+source_file="res://Audios/Instructions song.ogg"
+dest_files=[ "res://.import/Instructions song.ogg-828315b28e2c1e8c9cd9f5c46dc83c99.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

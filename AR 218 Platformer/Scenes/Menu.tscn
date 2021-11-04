@@ -136,3 +136,5 @@ stream = ExtResource( 6 )
 autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="Artist Statement" to="." method="_on_Artist_Statement_pressed"]
