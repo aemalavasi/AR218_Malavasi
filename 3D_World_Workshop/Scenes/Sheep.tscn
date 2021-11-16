@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Materials/lightorange.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[node name="Sheep" type="Spatial"]
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.9534, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Head" type="MeshInstance" parent="Body"]
+transform = Transform( 0.673902, 0, 0, 0, 0.555343, 0, 0, 0, 0.786789, 0, 0.859823, 1.28694 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Face" type="MeshInstance" parent="Body"]
+transform = Transform( 0.295582, 0, 0, 0, 0.5, 0, 0, 0, 0.469862, 0, 0.240851, 1.36043 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg1" type="MeshInstance" parent="Body"]
+transform = Transform( 0.128961, 0, 0, 0, 0.710464, 0, 0, 0, 0.118979, 0.605694, -1.26168, 0.747435 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg2" type="MeshInstance" parent="Body"]
+transform = Transform( 0.128961, 0, 0, 0, 0.710464, 0, 0, 0, 0.118979, -0.635963, -1.26168, 0.756914 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg3" type="MeshInstance" parent="Body"]
+transform = Transform( 0.128961, 0, 0, 0, 0.710464, 0, 0, 0, 0.118979, -0.635963, -1.26168, -0.807064 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="Leg4" type="MeshInstance" parent="Body"]
+transform = Transform( 0.128961, 0, 0, 0, 0.710464, 0, 0, 0, 0.118979, 0.60574, -1.26168, -0.797585 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
