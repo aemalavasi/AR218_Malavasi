@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="PrismMesh" id=4]
+
+[sub_resource type="PrismMesh" id=5]
+
+[node name="Flower" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.509087, 0, 0, 0, 0.465333, 0, 0, 0, 0.50733, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.0271774, 0, 0, 0, 1, 0, 0, 0, 0.0221447, 0, 0.617995, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -0.235687, 0, 0, 0, 0.247554, 0, 0, 0, 0.243543, 0, 1.65459, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.12336, 0, 0, 0, 0.181762, 0, 0, 0, -0.01438, 0, 1.99602, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 0.0891123, -0.125688, 0, 0.0853035, 0.1313, 0, 0, 0, -0.01438, -0.226645, 1.87517, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( -0.0810792, -0.136988, 0, 0.0929723, -0.119464, 0, 0, 0, -0.01438, -0.273003, 1.41599, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 0.00498938, -0.181613, 0, 0.123259, 0.00735147, 0, 0, 0, -0.01438, -0.361868, 1.65999, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( -0.123334, -0.00374627, 0, 0.00254257, -0.181723, 0, 0, 0, -0.01438, -0.00519347, 1.29588, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( -0.088321, 0.126895, 0, -0.0861226, -0.130134, 0, 0, 0, -0.01438, 0.247546, 1.41543, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( -0.00139515, 0.18175, 0, -0.123352, -0.00205565, 0, 0, 0, -0.01438, 0.350169, 1.65818, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="."]
+transform = Transform( 0.0900934, 0.124161, 0, -0.0842667, 0.132746, 0, 0, 0, -0.01438, 0.212412, 1.8823, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="."]
+transform = Transform( 0.0022318, -0.183784, 0, 0.128156, -0.0535599, 0, 0, 0, 0.0171866, -0.181976, 1.00255, -0.00474972 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="."]
+transform = Transform( -0.0157776, 0.188419, 0, -0.1272, 0.0338158, 0, 0, 0, 0.0171866, 0.202668, 0.820435, 0.0118693 )
+mesh = SubResource( 5 )
+material/0 = null
